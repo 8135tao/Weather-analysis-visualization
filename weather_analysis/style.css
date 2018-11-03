@@ -1,0 +1,115 @@
+body {
+    background:#bbc0bd;
+  }
+.navbar-default .navbar-brand {
+    color: maroon;
+    background-color: gold;
+    font-family: Impact;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+
+
+.navbar-header{
+    width:400px;
+    margin-left:75px !important;
+}
+
+
+.navbar-header .navbar-toggle .collapsed {
+  float: right;
+}
+
+.content{
+    margin-top:50px;
+}
+
+h1 {
+    background: #ffcc33;
+  font-family: Impact;
+	font-size: 28px;
+  font-weight: 300;
+  text-align: center
+}
+
+h2 {
+    background: #ffcc33;
+    font-family: Impact;
+	font-size: 24px;
+  font-weight: 300;
+  text-align: center
+}
+
+h3 {
+  font-family: Impact;
+  font-weight: 300;
+  text-align: center;
+}
+
+.box {
+  color: #7a0019;
+  background: #efeee7;
+}
+
+.box-left {
+  padding: 20px;
+}
+
+.box-right {
+  padding: 30px;
+}
+
+.box-single {
+  padding: 10px;
+  margin: 30px;
+}
+
+#summary {
+  margin: 10px;
+  font-size: 17px;
+  line-height: 1.8em;
+}
+
+
+#city-sample {
+	float: left;
+	width: 200px;
+	height: 200px;
+	margin: 10px 20px;
+}
+
+#landing-viz {
+  padding:15px 15px 15px 15px;
+  width: 100%;
+  height: 100%;
+}
+
+.figure:active{
+  border: 5px solid #cc5500;
+}
+
+.jumbotron {
+  color: #7a0019;
+  background:#ffcc33;
+  width: 100%;
+  height: 100%;
+  padding: 25px
+}
+
+.table {
+  color: #7a0019;
+  background: #f1d683;
+  width: 80%;
+  height: 80%;
+  padding: 10px;
+  margin-left: 10%;
+ 
+}
+
+#viz-main {
+  padding: 25px 40px 30px 40px;
+  width: 100%;
+ }
+ 
+/*reference https://coderwall.com/p/0jezca/vertical-spacing-for-bootstrap-columns */
