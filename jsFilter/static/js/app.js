@@ -2,8 +2,21 @@
 var tableData = data;
 
 // YOUR CODE HERE!
+
 // Select table body
 var tbody = d3.select("tbody");
+
+//select the dropdown menu for shape
+var shapeDropDown = d3.select("#shape-dropdown");
+
+//generate a unique list of shapes for dropdown menus for users to select
+var shapeList = [...new Set(tableData.map(entry => entry.shape))];
+//empty string means select all shapes
+shapeList.push("");
+//console.log(shapeList);
+
+//append the options to the dropdown lists
+shapeList.forEach(shape => {let option=shapeDropDown.append("option"); option.text(shape)});
 
 //select filter and select button
 var filterBtn = d3.select("#filter-btn");
@@ -20,6 +33,7 @@ function fillTable(dataTable){
                 });
         });
 }
+
 
 // function which display default(unfiltered) data when "reset" button is clicked
 function resetTable(){
@@ -51,7 +65,9 @@ function filterTable(){
     let cityInputValue = d3.select("#city").property("value");
     let stateInputValue = d3.select("#state").property("value");
     let countryInputValue = d3.select("#country").property("value");
-    let shapeInputValue = d3.select("#shape").property("value");
+    let shapeInputValue = shapeDropDown.property("value");
+    //node().value;
+    //
     
     
     filteredTableData = tableData.filter(
