@@ -6,17 +6,22 @@ var tableData = data;
 // Select table body
 var tbody = d3.select("tbody");
 
-//select the dropdown menu for shape
-var shapeDropDown = d3.select("#shape-dropdown");
+//function which generate a unique list of (keys, e.g. shape, state) for dropdown menus for users to select
+function generateOption(key){
+    //get unique value in a list https://medium.com/front-end-hacking/getting-unique-values-in-javascript-arrays-17063080f836
+    let keyList = [...new Set(tableData.map(entry => entry[key]))];
+    //append a empty option, which means select everything in the dropdown menu
+    keyList.push("");
 
-//generate a unique list of shapes for dropdown menus for users to select
-var shapeList = [...new Set(tableData.map(entry => entry.shape))];
-//empty string means select all shapes
-shapeList.push("");
-//console.log(shapeList);
+    let dropDown = d3.select("#"+key+"-dropdown");
+    //generate the options in the dropdown menu
+    keyList.forEach(uniqueKey =>  dropDown.append("option").text(uniqueKey) );
+    console.log(keyList.length)
+}
 
-//append the options to the dropdown lists
-shapeList.forEach(shape => {let option=shapeDropDown.append("option"); option.text(shape)});
+//generate options for shape and state dropdown menus
+generateOption("shape")
+generateOption("state")
 
 //select filter and select button
 var filterBtn = d3.select("#filter-btn");
@@ -48,9 +53,9 @@ function resetTable(){
 // if user input is empty, then nothing is filtered, otherwise we filter according to user input
 function checkContent(dataEntry,userInput){
     if (userInput === ""){
-        return true
+        return true;
     }else{
-        return dataEntry === userInput
+        return dataEntry === userInput;
     }
 }
 
@@ -61,11 +66,11 @@ function filterTable(){
     tbody.selectAll("tr").remove();
 
     //get input values for filters
-    let dateInputValue = d3.select("#datetime").property("value");
-    let cityInputValue = d3.select("#city").property("value");
-    let stateInputValue = d3.select("#state").property("value");
-    let countryInputValue = d3.select("#country").property("value");
-    let shapeInputValue = shapeDropDown.property("value");
+    let dateInputValue = d3.select("#datetime-form").property("value");
+    let cityInputValue = d3.select("#city-form").property("value");
+    let stateInputValue = d3.select("#state-dropdown").property("value");
+    let countryInputValue = d3.select("#country-form").property("value");
+    let shapeInputValue = d3.select("#shape-dropdown").property("value");
     //node().value;
     //
     
