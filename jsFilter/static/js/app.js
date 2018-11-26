@@ -54,8 +54,6 @@ function filterTable(){
     let shapeInputValue = d3.select("#shape").property("value");
     
     
-    //console.log(shapeInputValue);
-    
     filteredTableData = tableData.filter(
         entry => ( checkContent(entry['datetime'], dateInputValue) &&
                    checkContent(entry['city'], cityInputValue) && 
