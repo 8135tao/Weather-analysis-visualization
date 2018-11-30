@@ -52,11 +52,7 @@ function resetTable(){
 // function used to filter data, dataEntry=entries of data from data.js, e.g. 'datetime','city'. While userInput=user input on the corresponding forms, 
 // if user input is empty, then nothing is filtered, otherwise we filter according to user input
 function checkContent(dataEntry,userInput){
-    if (userInput === ""){
-        return true;
-    }else{
-        return dataEntry === userInput;
-    }
+    return (dataEntry === userInput) ||  (userInput === "");
 }
 
 //function which filter table data by criterion
