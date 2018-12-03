@@ -15,7 +15,7 @@ function buildMetadata(sample) {
     for (const [key,value] of Object.entries(data)){
       //the key value pair for location and ethnicity 
       //are too long to fit in a single line.
-        if (key == "WFRTO"){
+        if (key === "WFRTO"){
           continue;
         }
         else if (key === "LOCATION" || key === "ETHNICITY"){
